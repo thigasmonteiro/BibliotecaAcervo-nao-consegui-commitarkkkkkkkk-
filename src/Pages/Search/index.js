@@ -83,5 +83,6 @@ export default function Search() {
 }
 
 const styles = StyleSheet.create({
-
+    container:{backgroundColor:'#fff'}
+    
 })
