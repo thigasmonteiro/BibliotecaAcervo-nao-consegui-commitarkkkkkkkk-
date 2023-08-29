@@ -51,7 +51,7 @@ export default function Login() {
   const handleLogin = () => {
     if (validateFields()) {
       if (username === "admin" && password === "admin") {
-        navigation.navigate("Home");
+        navigation.navigate("HomeTabs");
       } else {
         setLoginError("Usuário ou senha incorretos.");
       }

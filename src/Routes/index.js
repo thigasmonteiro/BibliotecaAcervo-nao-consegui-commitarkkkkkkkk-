@@ -5,6 +5,8 @@ import Register from "../Pages/Register"
 import Login from "../Pages/Login"
 import Home from "../Pages/Home";
 import News from "../Pages/News";
+import Search from "../Pages/Search";
+
 
 const Stack = createNativeStackNavigator();
 const Tab = createBottomTabNavigator();
@@ -13,8 +15,15 @@ function HomeTabs(){
     return(
         <Tab.Navigator>
             <Tab.Screen
-            name="Home" component={Home}
+                name="Home" component={Home}
+                options={{headerShown:false}}
             />
+             <Tab.Screen
+                name="Search" component={Search}
+                options={{headerShown:false}}
+            />
+        
+        
         </Tab.Navigator>
     )
 }
@@ -36,8 +45,8 @@ export default function Routes(){
         options={{headerShown:false}}
         />
         <Stack.Screen
-        name="Home"
-        component={Home}
+        name="HomeTabs"
+        component={HomeTabs}
         options={{headerShown:false}}
         />
         <Stack.Screen
