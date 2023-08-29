@@ -6,14 +6,16 @@ import Login from "../Pages/Login"
 import Home from "../Pages/Home";
 import News from "../Pages/News";
 import Search from "../Pages/Search";
-
+import Header from "../components/Header";
 
 const Stack = createNativeStackNavigator();
 const Tab = createBottomTabNavigator();
 
 function HomeTabs(){
+    
     return(
         <Tab.Navigator>
+
             <Tab.Screen
                 name="Home" component={Home}
                 options={{headerShown:false}}
