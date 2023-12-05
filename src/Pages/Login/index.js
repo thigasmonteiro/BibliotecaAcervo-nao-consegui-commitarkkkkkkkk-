@@ -62,8 +62,8 @@ export default function Login() {
     <KeyboardAvoidingView style={styles.background}>
       <View style={styles.containerLogo}>
         <Image
-          style={{ width: 200, height: 200 }}
-          source={require('../../assets/bibliotecalogo.png')}
+          style={{ width: 400, height: 200 }}
+          source={require('../../assets/logo.jpg')}
         />
       </View>
 
@@ -118,7 +118,7 @@ const styles = StyleSheet.create({
     flex: 1,
     alignItems: 'center',
     justifyContent: 'center',
-    backgroundColor: 'orange'
+    backgroundColor: '#04BF7B'
   },
   containerLogo: {
     flex: 1,
@@ -140,7 +140,7 @@ const styles = StyleSheet.create({
     padding: 10,
   },
   btnSubmit: {
-    backgroundColor: '#35AAFF',
+    backgroundColor: '#027333',
     width: '90%',
     height: 45,
     alignItems: 'center',

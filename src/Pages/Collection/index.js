@@ -5,43 +5,43 @@ const LibraryCatalog = () => {
   const [books, setBooks] = useState([
     {
       id: 1,
-      title: 'Livro 1',
-      author: 'Autor 1',
+      livro: 'Livro 1',
+      autor: 'Autor 1',
       coverImage: 'https://via.placeholder.com/150',
       synopsis: 'Sinopse do Livro 1. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam tristique tristique leo. ',
       available: true,
       details: {
         language: 'Português',
         pages: 300,
-        genre: 'Ficção',
+        categoria: 'Ficção',
         publicationYear: 2022,
       },
     },
     {
       id: 2,
-      title: 'Livro 2',
-      author: 'Autor 2',
+      livro: 'Livro 2',
+      autor: 'Autor 2',
       coverImage: 'https://via.placeholder.com/150',
       synopsis: 'Sinopse do Livro 2. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam tristique tristique leo. ',
       available: false,
       details: {
         language: 'Inglês',
         pages: 250,
-        genre: 'Não Ficção',
+        categoria: 'Não Ficção',
         publicationYear: 2021,
       },
     },
     {
       id: 3,
-      title: 'Livro 3',
-      author: 'Autor 3',
+      livro: 'Livro 3',
+      autor: 'Autor 3',
       coverImage: 'https://via.placeholder.com/150',
       synopsis: 'Sinopse do Livro 3. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam tristique tristique leo. ',
       available: true,
       details: {
         language: 'Espanhol',
         pages: 200,
-        genre: 'Romance',
+        categoria: 'Romance',
         publicationYear: 2020,
       },
     },
@@ -71,8 +71,8 @@ const LibraryCatalog = () => {
             <View style={styles.bookContainer}>
               <Image source={{ uri: book.coverImage }} style={styles.bookImage} />
               <View style={styles.bookInfo}>
-                <Text style={styles.bookTitle}>{book.title}</Text>
-                <Text style={styles.bookAuthor}>Autor: {book.author}</Text>
+                <Text style={styles.bookTitle}>{book.livro}</Text>
+                <Text style={styles.bookAuthor}>Autor: {book.autor}</Text>
               </View>
               <Text style={book.available ? styles.available : styles.notAvailable}>
                 {book.available ? 'Disponível' : 'Indisponível'}
@@ -97,7 +97,7 @@ const LibraryCatalog = () => {
             <View style={styles.detailsContainer}>
               <Text style={styles.detailText}>Idioma: {selectedBook?.details.language}</Text>
               <Text style={styles.detailText}>Páginas: {selectedBook?.details.pages}</Text>
-              <Text style={styles.detailText}>Gênero: {selectedBook?.details.genre}</Text>
+              <Text style={styles.detailText}>Gênero: {selectedBook?.details.ca}</Text>
               <Text style={styles.detailText}>Ano de Publicação: {selectedBook?.details.publicationYear}</Text>
             </View>
             <TextInput
@@ -122,7 +122,7 @@ const LibraryCatalog = () => {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: 'orange',
+    backgroundColor: '#04BF7B',
     padding: 20,
     
   },
@@ -135,7 +135,7 @@ const styles = StyleSheet.create({
   },
   booksContainer: {
     flex: 1,
-    backgroundColor:"orange"
+    backgroundColor:"#04BF7B"
   },
   bookContainer: {
     flexDirection: 'row',

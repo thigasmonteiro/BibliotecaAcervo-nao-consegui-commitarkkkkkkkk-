@@ -11,9 +11,9 @@ export default function Search() {
             setSearchResults([
                 ...searchResults,
                 {
-                    title: searchText,
+                    livro: searchText,
                     imageUrl: 'https://example.com/book-image.jpg', //nao esqucer url
-                    author : ' Autor Desconecido' 
+                    autor : ' Autor Desconecido' 
                 },
                 {
                     //adicionar mais caso quiser, no title o searchText
@@ -69,8 +69,8 @@ export default function Search() {
             <View style={styles.bookItem}>
               <Image source={{ uri: item.imageUrl }} style={styles.bookImage} />
               <View style={styles.bookDetails}>
-                <Text style={styles.bookTitle}>{item.title}</Text>
-                <Text style={styles.bookAuthor}>{item.author}</Text>
+                <Text style={styles.bookTitle}>{item.livro}</Text>
+                <Text style={styles.bookAuthor}>{item.livro}</Text>
               </View>
             </View>
           )}
@@ -84,7 +84,7 @@ const styles = StyleSheet.create({
     container: {
         flex: 1,
         padding: 20,
-        backgroundColor:'orange'
+        backgroundColor:'#04BF7B'
       },
       searchContainer: {
         flexDirection: 'row',
