@@ -9,7 +9,7 @@ export default function Header(){
                 <View style={styles.iconContainer}>
                     <AntDesign name='bars' size={30} color={'white'}/>
                 </View>
-                <Text style={styles.title}> Biblioteca Pública Paraná </Text>
+                <Text style={styles.title}> Biblioteca</Text>
                 <View style={styles.logoContainer}>
                     <Image source={{uri: 'https://media.glassdoor.com/sql/2493747/biblioteca-p%C3%BAblica-do-paran%C3%A1-squarelogo-1555303572425.png' }} 
                     style={styles.logo}  />
