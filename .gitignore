@@ -1,0 +1,18 @@
+# Dependency directories
+node_modules/
+# Gradle files
+android/.gradle/
+android/app/build/
+# Android Studio
+android/.idea/
+# Generated files
+*.iml
+*.gradle
+build/
+# OS-specific files
+.DS_Store
+Thumbs.db
+# Logs
+logs/
+# Debug files
+*.log

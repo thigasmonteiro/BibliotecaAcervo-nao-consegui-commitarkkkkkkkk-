@@ -1,10 +1,10 @@
 import api from "../plugins/api";
 
-class LivroService {
-  async getAllLivros() {
-    const response = await api.get("/livros/");
+class AutorService {
+  async getAllAutores() {
+    const response = await api.get("/autores/");
     return response.data;
   }
 }
 
-export default new LivroServiceService();
+export default new AutorService();

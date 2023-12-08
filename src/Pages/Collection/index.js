@@ -1,123 +1,82 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { View, Text, ScrollView, StyleSheet, Image, TouchableOpacity, Modal, TextInput } from 'react-native';
+import livroService from '../../services/Livro'
+import Cardlivro from '../../Cards/Cardlivro';
 
-const LibraryCatalog = () => {
-  const [books, setBooks] = useState([
-    {
-      id: 1,
-      livro: 'Livro 1',
-      autor: 'Autor 1',
-      coverImage: 'https://via.placeholder.com/150',
-      synopsis: 'Sinopse do Livro 1. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam tristique tristique leo. ',
-      available: true,
-      details: {
-        language: 'Português',
-        pages: 300,
-        categoria: 'Ficção',
-        publicationYear: 2022,
-      },
-    },
-    {
-      id: 2,
-      livro: 'Livro 2',
-      autor: 'Autor 2',
-      coverImage: 'https://via.placeholder.com/150',
-      synopsis: 'Sinopse do Livro 2. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam tristique tristique leo. ',
-      available: false,
-      details: {
-        language: 'Inglês',
-        pages: 250,
-        categoria: 'Não Ficção',
-        publicationYear: 2021,
-      },
-    },
-    {
-      id: 3,
-      livro: 'Livro 3',
-      autor: 'Autor 3',
-      coverImage: 'https://via.placeholder.com/150',
-      synopsis: 'Sinopse do Livro 3. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam tristique tristique leo. ',
-      available: true,
-      details: {
-        language: 'Espanhol',
-        pages: 200,
-        categoria: 'Romance',
-        publicationYear: 2020,
-      },
-    },
-  ]);
+export default function LibraryCatalog ({ navigation }) {
+  const [Livros, setLivros] = useState([]);
 
-  const [selectedBook, setSelectedBook] = useState(null);
-  const [isModalVisible, setModalVisible] = useState(false);
-  const [borrowerName, setBorrowerName] = useState('');
+  async function BuscarDados2() {
+    const data = await livroService.getAllLivros();
+    setLivros(data);
+  }
 
-  const toggleModal = (book) => {
-    setSelectedBook(book);
-    setBorrowerName('');
-    setModalVisible(!isModalVisible);
-  };
+  useEffect(() => {
+    BuscarDados2();
+  }, []);
 
-  const handleBorrow = () => {
-    ///implementar api se quiser
-    toggleModal();
-  };
 
+  
   return (
-    <View style={styles.container}>
-      <Text style={styles.header}>Acervo da Biblioteca</Text>
-      <ScrollView style={styles.booksContainer}>
-        {books.map((book) => (
-          <TouchableOpacity key={book.id} onPress={() => toggleModal(book)}>
-            <View style={styles.bookContainer}>
-              <Image source={{ uri: book.coverImage }} style={styles.bookImage} />
-              <View style={styles.bookInfo}>
-                <Text style={styles.bookTitle}>{book.livro}</Text>
-                <Text style={styles.bookAuthor}>Autor: {book.autor}</Text>
-              </View>
-              <Text style={book.available ? styles.available : styles.notAvailable}>
-                {book.available ? 'Disponível' : 'Indisponível'}
-              </Text>
-            </View>
-          </TouchableOpacity>
-        ))}
-      </ScrollView>
-      <Modal
-        animationType="slide"
-        transparent={true}
-        visible={isModalVisible}
-        onRequestClose={() => toggleModal()}
-      >
-        <View style={styles.modalContainer}>
-          <View style={styles.modalContent}>
-            <Text style={styles.modalTitle}>Detalhes do Livro</Text>
-            <Image source={{ uri: selectedBook?.coverImage }} style={styles.modalImage} />
-            <Text style={styles.modalBookTitle}>{selectedBook?.title}</Text>
-            <Text style={styles.modalBookAuthor}>Autor: {selectedBook?.author}</Text>
-            <Text style={styles.modalSynopsis}>{selectedBook?.synopsis}</Text>
-            <View style={styles.detailsContainer}>
-              <Text style={styles.detailText}>Idioma: {selectedBook?.details.language}</Text>
-              <Text style={styles.detailText}>Páginas: {selectedBook?.details.pages}</Text>
-              <Text style={styles.detailText}>Gênero: {selectedBook?.details.ca}</Text>
-              <Text style={styles.detailText}>Ano de Publicação: {selectedBook?.details.publicationYear}</Text>
-            </View>
-            <TextInput
-              style={styles.input}
-              placeholder="Seu nome"
-              value={borrowerName}
-              onChangeText={(text) => setBorrowerName(text)}
-            />
-            <TouchableOpacity style={styles.borrowButton} onPress={handleBorrow}>
-              <Text style={styles.borrowButtonText}>Emprestar</Text>
-            </TouchableOpacity>
-            <TouchableOpacity style={styles.closeButton} onPress={() => toggleModal()}>
-              <Text style={styles.closeButtonText}>Voltar</Text>
-            </TouchableOpacity>
-          </View>
-        </View>
-      </Modal>
-    </View>
+
+    <ScrollView>
+          {Livros.map((Livro) => (
+            <Cardlivro key={Livro.id} livro={Livro} />
+          ))}
+        </ScrollView>
+
+
+    // <View style={styles.container}>
+    //   <Text style={styles.header}>Acervo da Biblioteca</Text>
+    //   <ScrollView style={styles.booksContainer}>
+    //     {livros.map((livro) => (
+    //       <TouchableOpacity key={livro.id} onPress={() => toggleModal(livro)}>
+    //         <View style={styles.bookContainer}>
+    //           <Image source={{ uri: livro.coverImage }} style={styles.bookImage} />
+    //           <View style={styles.livroInfo}>
+    //             <Text style={styles.bookTitle}>{livro.livro}</Text>
+    //             <Text style={styles.bookAuthor}>Autor: {livro.autor}</Text>
+    //             <Text style={styles.bookAuthor}>Editora: {livro.editora}</Text>
+    //           </View>
+    //           <Text style={book.available ? styles.available : styles.notAvailable}>
+    //             {livro.available ? 'Disponível' : 'Indisponível'}
+    //           </Text>
+    //         </View>
+    //       </TouchableOpacity>
+    //     ))}
+    //   </ScrollView>
+    //   <Modal
+    //     animationType="slide"
+    //     transparent={true}
+    //     visible={isModalVisible}
+    //     onRequestClose={() => toggleModal()}
+    //   >
+    //     <View style={styles.modalContainer}>
+    //       <View style={styles.modalContent}>
+    //         <Text style={styles.modalTitle}>Detalhes do Livro</Text>
+    //         <Image source={{ uri: selectedLivro?.coverImage }} style={styles.modalImage} />
+    //         <Text style={styles.modalBookTitle}>{selectedLivro?.livro}</Text>
+    //         <Text style={styles.modalBookAuthor}>Autor: {selectedLivro?.autor}</Text>
+    //         <Text style={styles.modalBookAuthor}>Editora: {selectedLivro?.editora}</Text>
+    //         <TextInput
+    //           style={styles.input}
+    //           placeholder="Seu nome"
+    //           value={borrowerName}
+    //           onChangeText={(text) => setBorrowerName(text)}
+    //         />
+    //         <TouchableOpacity style={styles.borrowButton} onPress={handleBorrow}>
+    //           <Text style={styles.borrowButtonText}>Emprestar</Text>
+    //         </TouchableOpacity>
+    //         <TouchableOpacity style={styles.closeButton} onPress={() => toggleModal()}>
+    //           <Text style={styles.closeButtonText}>Voltar</Text>
+    //         </TouchableOpacity>
+    //       </View>
+    //     </View>
+    //   </Modal>
+    // </View>
   );
 };
+
 
 const styles = StyleSheet.create({
   container: {
@@ -245,4 +204,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default LibraryCatalog;
+

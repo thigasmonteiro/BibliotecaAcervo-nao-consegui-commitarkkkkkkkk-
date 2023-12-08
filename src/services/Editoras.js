@@ -1,10 +1,10 @@
 import api from "../plugins/api";
 
-class LivroService {
-  async getAllLivros() {
-    const response = await api.get("/livros/");
+class EditoraService {
+  async getAllEditoras() {
+    const response = await api.get("/editoras/");
     return response.data;
   }
 }
 
-export default new LivroServiceService();
+export default new EditoraService();
