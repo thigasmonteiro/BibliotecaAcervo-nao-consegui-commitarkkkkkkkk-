@@ -83,6 +83,11 @@ export default function Routes(){
         <Stack.Navigator>
 
         <Stack.Screen
+        name="HomeTabs"
+        component={HomeTabs}
+        options={{headerShown:false}}
+        />
+        <Stack.Screen
         name="Login"
         component={Login}
         options={{headerShown:false}}
@@ -91,11 +96,6 @@ export default function Routes(){
         <Stack.Screen
         name="Register"
         component={Register}
-        options={{headerShown:false}}
-        />
-        <Stack.Screen
-        name="HomeTabs"
-        component={HomeTabs}
         options={{headerShown:false}}
         />
         <Stack.Screen
