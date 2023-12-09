@@ -22,7 +22,7 @@ function HomeTabs(){
                 tabBarShowLabel: false,
                 tabBarStyle:{
                     position:'absolute',
-                    backgroundColor:'orange',
+                    backgroundColor:'#18117A',
                     borderTopWidth:0,
 
                     bottom:14,
@@ -67,9 +67,9 @@ function HomeTabs(){
                 options={{headerShown:false,
                     tabBarIcon: ({color, size, focused}) => {
                         if (focused){
-                            return <Ionicons name="person" size={size} color={color} /> 
+                            return <Ionicons name="book" size={size} color={color} /> 
                         }
-                        return <Ionicons name="person-outline" size={size} color={color} />
+                        return <Ionicons name="book-outline" size={size} color={color} />
                     }}}
             />
         

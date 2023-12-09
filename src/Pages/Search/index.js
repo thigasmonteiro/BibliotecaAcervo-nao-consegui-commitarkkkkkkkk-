@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { View, Text, TextInput, TouchableOpacity, FlatList, StyleSheet, Image } from 'react-native'
 import { Ionicons } from '@expo/vector-icons'
+import Header from "../../components/Header";
 
 export default function Search() {
     const [ searchText, setSearchText ] = useState(''); //usando useState para criar um estado e armazenar o texto da pesquisa,ainda usando useState, atualiza o valor de searchText
@@ -12,15 +13,10 @@ export default function Search() {
                 ...searchResults,
                 {
                     livro: searchText,
-                    imageUrl: 'https://example.com/book-image.jpg', //nao esqucer url
-                    autor : ' Autor Desconecido' 
+                    imageUrl: 'https://pm1.aminoapps.com/6458/4db6b47ae12674e139a8ddb54a74920728eff9a3_00.jpg',
+                    autor : ' Johnn Kebber' 
                 },
-                {
-                    //adicionar mais caso quiser, no title o searchText
-                    //que faz o nome do livro ser oque pesquisou.
-                    //nao esquecer de mudar na Views 'resultsContainer'
-                    //e no title.
-                },
+             
             ]);
             setSearchHistory(prevHistory => [searchText, ...prevHistory]);
             setSearchText('');
@@ -33,7 +29,8 @@ export default function Search() {
     };
 
     return(
-        <View style={styles.container}>
+      <View style={styles.container}>
+        
             <View style={styles.searchContainer}>
                 <TextInput 
                 style={styles.searchInput}
@@ -75,16 +72,16 @@ export default function Search() {
             </View>
           )}
           keyExtractor={(item, index) => index.toString()}
-        />
+          />
             </View>
         </View>
-    )
-}
+        )
+      }
 const styles = StyleSheet.create({
-    container: {
-        flex: 1,
-        padding: 20,
-        backgroundColor:'#04BF7B'
+  container: {
+    flex: 1,
+    padding: 20,
+        backgroundColor:'#2296F0'
       },
       searchContainer: {
         flexDirection: 'row',
@@ -101,7 +98,7 @@ const styles = StyleSheet.create({
         backgroundColor:'#fff'
       },
       searchButton: {
-        backgroundColor: '#35AAFF',
+        backgroundColor: '#22D7F0',
         paddingVertical: 10,
         paddingHorizontal: 15,
         borderRadius: 5,

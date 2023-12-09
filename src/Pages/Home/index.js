@@ -57,7 +57,7 @@ export default function Home() {
 const styles = StyleSheet.create({
 container:{
   flex:1,
-  backgroundColor:'#04BF7B'
+  backgroundColor:'#2296F0'
  },
 scrollViewContent:{
   paddingHorizontal:20,

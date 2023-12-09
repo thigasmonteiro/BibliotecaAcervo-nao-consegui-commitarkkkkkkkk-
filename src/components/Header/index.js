@@ -21,12 +21,12 @@ export default function Header(){
 
 const styles = StyleSheet.create({
     container:{
-        backgroundColor:'#F29F05',
+        backgroundColor:'#22D7F0',
         paddingBottom:10,
         paddingTop:40,
     },
     header:{
-        backgroundColor:'#F29F05',
+        backgroundColor:'#22D7F0',
         alignItems:'center',
         flexDirection:'row',
         marginBottom:10,
