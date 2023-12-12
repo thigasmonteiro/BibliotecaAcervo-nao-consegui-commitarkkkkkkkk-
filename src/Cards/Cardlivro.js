@@ -14,7 +14,7 @@ function Card(props) {
         <Text style={styles.cardTitulo}>{livro.titulo}</Text>
         <Text style={styles.cardAutor}>{livro.autor}</Text>
         <Text style={styles.cardISBN}>ISBN: {livro.isbn}</Text>
-        <Text style={styles.cardAnoPublicacao}>Ano de Publicação: 2011</Text>
+        <Text style={styles.cardAnoPublicacao}>Autor: {livro.autor} </Text>
         <Text style={styles.cardAutor}>Autor: José</Text>
       </View>
     </View>

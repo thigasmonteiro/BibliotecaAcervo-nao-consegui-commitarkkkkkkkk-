@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { View, Text, ScrollView, StyleSheet, Image, TouchableOpacity, Modal, TextInput } from 'react-native';
 import livroService from '../../services/Livro'
 import Cardlivro from '../../Cards/Cardlivro';
+import AutorService from '../../services/Autor'
 
 export default function LibraryCatalog ({ navigation }) {
   const [Livros, setLivros] = useState([]);
@@ -22,7 +23,7 @@ export default function LibraryCatalog ({ navigation }) {
     <ScrollView style={styles.container}>
         <Text style={styles.titulo}>Livros em Estoque </Text>
           {Livros.map((Livro) => (
-            <Cardlivro key={Livro.id} livro={Livro} />
+            <Cardlivro key={Livro.id} livro={Livro} autor={autor} />
           ))}
         </ScrollView>
 
