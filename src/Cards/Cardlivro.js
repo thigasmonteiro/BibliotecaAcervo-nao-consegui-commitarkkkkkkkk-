@@ -8,7 +8,7 @@ function Card(props) {
     <View style={styles.cardContainer}>
       <Image
         style={styles.cardImagem}
-        source={{ uri: livro.capa.url }}
+        source={{ uri: livro.capa.file }}
       />
       <View style={styles.cardInfo}>
         <Text style={styles.cardTitulo}>{livro.titulo}</Text>
