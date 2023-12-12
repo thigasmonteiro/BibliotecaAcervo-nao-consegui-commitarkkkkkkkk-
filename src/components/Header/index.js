@@ -11,7 +11,7 @@ export default function Header(){
                 </View>
                 <Text style={styles.title}> Biblioteca</Text>
                 <View style={styles.logoContainer}>
-                    <Image source={{uri: 'https://media.glassdoor.com/sql/2493747/biblioteca-p%C3%BAblica-do-paran%C3%A1-squarelogo-1555303572425.png' }} 
+                    <Image source={{uri: 'https://images.vexels.com/media/users/3/229082/isolated/preview/6fabc24c3830d75486725cc6d786dfbb-logotipo-dos-circulos-do-livro.png' }} 
                     style={styles.logo}  />
                 </View>
             </View>
@@ -39,7 +39,8 @@ const styles = StyleSheet.create({
     iconContainer:{
         flexDirection:'row',
         marginEnd:10,
-        justifyContent:'flex-start'
+        justifyContent:'flex-start',
+        width: 30,
     },
     title:{
         flex:1,
@@ -49,8 +50,8 @@ const styles = StyleSheet.create({
         textAlign:'center'
     },
     logoContainer:{
-        width:30,
-        height:30,
+        width:50,
+        height:50,
         justifyContent:'flex-start',
         alignItems:'center'
     },

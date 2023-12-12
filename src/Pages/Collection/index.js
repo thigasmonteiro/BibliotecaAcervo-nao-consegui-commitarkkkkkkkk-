@@ -20,7 +20,7 @@ export default function LibraryCatalog ({ navigation }) {
   return (
 
     <ScrollView style={styles.container}>
-         
+        <Text style={styles.titulo}>Livros em Estoque </Text>
           {Livros.map((Livro) => (
             <Cardlivro key={Livro.id} livro={Livro} />
           ))}
@@ -37,8 +37,13 @@ const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: '#2296F0',
     padding: 20,
-    
   },
+  titulo:{
+    color:'white',
+    fontSize:20,
+    justifyContent:'center',
+    fontWeight:'bold'
+  }
   
 });
 

@@ -8,6 +8,7 @@ import News from "../Pages/News";
 import Search from "../Pages/Search";
 import Header from "../components/Header";
 import LibraryCatalog from "../Pages/Collection";
+import Profile from "../Pages/Person";
 
 import { Ionicons } from '@expo/vector-icons'
 
@@ -70,6 +71,17 @@ function HomeTabs(){
                             return <Ionicons name="book" size={size} color={color} /> 
                         }
                         return <Ionicons name="book-outline" size={size} color={color} />
+                    }}}
+            />
+
+<Tab.Screen
+                name="Profile" component={Profile}
+                options={{headerShown:false,
+                    tabBarIcon: ({color, size, focused}) => {
+                        if (focused){
+                            return <Ionicons name="person" size={size} color={color} /> 
+                        }
+                        return <Ionicons name="person-outline" size={size} color={color} />
                     }}}
             />
         
