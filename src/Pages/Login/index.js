@@ -63,7 +63,7 @@ export default function Login() {
       <View style={styles.containerLogo}>
         <Image
           style={{ width: 400, height: 200 }}
-          source={require('../../assets/logo.jpg')}
+          source={{uri: 'https://images.vexels.com/media/users/3/229082/isolated/preview/6fabc24c3830d75486725cc6d786dfbb-logotipo-dos-circulos-do-livro.png'}}
         />
       </View>
 

@@ -5,7 +5,7 @@ export default function News() {
   const news = {
     title: 'Jornal Cândido explora o universo da teledramaturgia brasileira na edição de julho',
     content: 'O Jornal Cândido, em sua edição de julho, traz um mergulho profundo no rico universo da teledramaturgia brasileira. Com análises de clássicos e entrevistas com atores renomados, esta edição oferece uma visão abrangente do impacto da televisão em nossa cultura.',
-    imageUrl: 'URL_DA_IMAGEM', // Substitua pela URL da imagem da notícia
+    imageUrl: 'https://didaticalizando.com/wp-content/uploads/2023/04/9.png', 
   };
 
   return (

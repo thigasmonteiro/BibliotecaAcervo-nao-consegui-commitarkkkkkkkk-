@@ -5,28 +5,29 @@ const Profile = () => {
   const user = {
     name: 'Thiago Monteiro',
     location: 'Araquari',
-    friends: 500,
-    photos: 100,
+    
     books: [
       {
         id: 1,
         title: 'Meu Pequeno Príncipe',
         author: 'John Maier',
-        image: 'https://images.tcdn.com.br/img/img_prod/1086289/livro_o_pequeno_principe_capa_verde_autor_antoine_de_saint_exupery_1041_1_98cd25ab312f025c69366e161dd3630f.png', // Substitua com a URL da imagem do livro
-     
+        year: 2020,
+        publisher: 'Editora ABC',
+        image: 'https://images.tcdn.com.br/img/img_prod/1086289/livro_o_pequeno_principe_capa_verde_autor_antoine_de_saint_exupery_1041_1_98cd25ab312f025c69366e161dd3630f.png',
       },
       {
         id: 2,
         title: 'Senhor dos Anéis',
         author: 'Arnold James',
-        image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRqCdFoBRR_eBBrb-DT90EUhV1n76og9f-SEw&usqp=CAU', 
+        year: 2015,
+        publisher: 'Editora XYZ',
+        image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRqCdFoBRR_eBBrb-DT90EUhV1n76og9f-SEw&usqp=CAU',
         progress: 75,
         rating: 5,
       },
-      
     ],
-    coverPhoto: 'https://png.pngtree.com/thumb_back/fh260/background/20200714/pngtree-modern-double-color-futuristic-neon-background-image_351866.jpg', // Substitua com a URL da imagem de capa
-    profileImage: 'https://thumbs.dreamstime.com/b/circular-monocrom%C3%A1tico-%C3%ADcone-do-branco-da-silhueta-homem-perfil-isolado-no-112109811.jpg', // Substitua com a URL da imagem de perfil
+    coverPhoto: 'https://png.pngtree.com/thumb_back/fh260/background/20200714/pngtree-modern-double-color-futuristic-neon-background-image_351866.jpg',
+    profileImage: 'https://thumbs.dreamstime.com/b/circular-monocrom%C3%A1tico-%C3%ADcone-do-branco-da-silhueta-homem-perfil-isolado-no-112109811.jpg',
   };
 
   return (
@@ -51,8 +52,8 @@ const Profile = () => {
 
         {/* Informações do perfil */}
         <View style={styles.profileStats}>
-          <Text>{user.friends} Livros</Text>
-          <Text>{user.photos} Fotos</Text>
+          <Text>{user.friends} MEUS </Text>
+          <Text>{user.photos} LIVROS</Text>
         </View>
       </View>
 
@@ -64,6 +65,8 @@ const Profile = () => {
             <View style={styles.bookText}>
               <Text style={styles.bookTitle}>{book.title}</Text>
               <Text style={styles.bookAuthor}>{book.author}</Text>
+              <Text style={styles.bookInfo}>Ano: {book.year}</Text>
+              <Text style={styles.bookInfo}>Editora: {book.publisher}</Text>
             </View>
             {/* Adicione a barra de progresso e avaliação em estrelas aqui */}
           </View>
@@ -105,7 +108,6 @@ const styles = StyleSheet.create({
   location: {
     fontSize: 16,
     color: 'white',
-   
   },
   profileStats: {
     flexDirection: 'row',
@@ -125,13 +127,13 @@ const styles = StyleSheet.create({
   bookImage: {
     width: 75,
     height: 100,
-    marginVertical: 10, 
+    marginVertical: 10,
     marginHorizontal: 10,
   },
   bookText: {
     flex: 1,
     marginTop: 10,
-    alignSelf:'flex-start' 
+    alignSelf: 'flex-start',
   },
   bookTitle: {
     fontSize: 16,
@@ -141,6 +143,10 @@ const styles = StyleSheet.create({
     fontSize: 14,
     color: 'gray',
   },
+  bookInfo: {
+    fontSize: 12,
+    color: 'gray',
+  },
 });
 
-export default   Profile;
+export default Profile;
