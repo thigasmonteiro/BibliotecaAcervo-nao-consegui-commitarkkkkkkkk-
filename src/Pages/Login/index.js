@@ -50,7 +50,7 @@ export default function Login() {
 
   const handleLogin = () => {
     if (validateFields()) {
-      if (username === "admin" && password === "admin") {
+      if (username === "thiago.monteiro" && password === "thigas") {
         navigation.navigate("HomeTabs");
       } else {
         setLoginError("Usuário ou senha incorretos.");
@@ -118,12 +118,16 @@ const styles = StyleSheet.create({
     flex: 1,
     alignItems: 'center',
     justifyContent: 'center',
-    backgroundColor: '#04BF7B'
+    backgroundColor: '#2296F0'
   },
   containerLogo: {
     flex: 1,
     justifyContent: 'center',
     paddingTop: 20,
+    width:'100%',
+    height:'100%',
+    resizeMode: 'contain',
+    
   },
   containerInput: {
     flex: 1,

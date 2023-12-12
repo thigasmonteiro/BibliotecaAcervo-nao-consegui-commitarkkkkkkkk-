@@ -122,7 +122,7 @@ const styles = StyleSheet.create({
     flex: 1,
     alignItems: 'center',
     justifyContent: 'center',
-    backgroundColor: 'orange',
+    backgroundColor: '#2296F0',
   },
   input: {
     width: '80%',
@@ -155,7 +155,7 @@ const styles = StyleSheet.create({
     color:'#fff'
   },
   registerButton: {
-    backgroundColor: '#35AAFF',
+    backgroundColor: '#027333',
     width: '80%',
     height: 45,
     alignItems: 'center',
