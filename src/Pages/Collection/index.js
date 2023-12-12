@@ -41,7 +41,7 @@ const styles = StyleSheet.create({
   },
   titulo:{
     color:'white',
-    fontSize:20,
+    fontSize:21,
     justifyContent:'center',
     fontWeight:'bold'
   }
