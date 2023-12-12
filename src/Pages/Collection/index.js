@@ -23,7 +23,7 @@ export default function LibraryCatalog ({ navigation }) {
     <ScrollView style={styles.container}>
         <Text style={styles.titulo}>Livros em Estoque </Text>
           {Livros.map((Livro) => (
-            <Cardlivro key={Livro.id} livro={Livro} autor={autor} />
+            <Cardlivro key={Livro.id} livro={Livro} />
           ))}
         </ScrollView>
 

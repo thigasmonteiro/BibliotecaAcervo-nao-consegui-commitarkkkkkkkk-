@@ -12,9 +12,8 @@ function Card(props) {
       />
       <View style={styles.cardInfo}>
         <Text style={styles.cardTitulo}>{livro.titulo}</Text>
-        <Text style={styles.cardAutor}>{livro.autor}</Text>
         <Text style={styles.cardISBN}>ISBN: {livro.isbn}</Text>
-        <Text style={styles.cardAnoPublicacao}>Autor: {livro.autor} </Text>
+        {/* <Text style={styles.cardAnoPublicacao}>Autor: {livro.categoria} </Text> */}
         <Text style={styles.cardAutor}>Autor: José</Text>
       </View>
     </View>
